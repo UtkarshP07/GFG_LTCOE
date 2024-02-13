@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LTCE'GFG Student Chapter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="main-page">
+      <div class="landing-page">
+        <div class="navbar">
+          <div class="navbar-logo">
+            <img
+              src="images/Untitled_design-removebg-preview.png"
+              alt="GFG logo"
+            />
+          </div>
+          <div class="navbar-buttons">
+            <a href="#" onclick="scrollToCouncil()">Committee</a>
+            <a href="#">Events</a>
+            <a href="#"><b>GET IN TOUCH</b></a>
+            <div class="menu-toggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+        <div class="content-section-page">
+          <div class="content">
+            <div class="content-section">
+              <div class="content-section-left">
+                <div class="heading-container">
+                  <h1 class="gfg-heading">
+                    GFG's <span class="highlight-text">Student Chapter</span>
+                  </h1>
+                </div>
+                <p>
+                  Join the GeeksforGeeks community at LTCOE for exciting tech
+                  events, workshops, and hackathons. Connect with peers, learn,
+                  and unleash your creativity in computer science and
+                  technology. Sign up now to ignite your passion and shape the
+                  future of tech!
+                </p>
+              </div>
+              <div class="content-section-right">
+                <img
+                  src="images/students_09-Photoroom.png-Photoroom.png"
+                  alt="Placeholder Image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container" id="council">
+        <div class="council">
+          <h1>
+            Committee
+            <span
+              style="
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold',
+                  sans-serif;
+              "
+              >2K24</span
+            >
+          </h1>
+          <div class="member">
+            <img src="images/Council/Sumit.jpg" alt="Member 1" />
+            <div class="name">Sumit Boddu</div>
+            <div class="post">Chairperson</div>
+          </div>
+          <div class="member">
+            <img src="images/Council/SParab.jpg" alt="Member 2" />
+            <div class="name">Sumit Parab</div>
+            <div class="post">Vice Chairperson</div>
+          </div>
+          <div class="member">
+            <img src="images/Council/Utkarsh.jpg" alt="Member 2" />
+            <div class="name">Utkarsh Pandey</div>
+            <div class="post">Technical Head</div>
+          </div>
+          <div class="member">
+            <img src="images/Council/Amey.jpg" alt="Member 2" />
+            <div class="name">Ameya Mhatre</div>
+            <div class="post">Documentation Head</div>
+          </div>
+          <div class="member">
+            <img src="images/Council/Sanjal.jpg" alt="Member 2" />
+            <div class="name">Sanjal Gawade</div>
+            <div class="post">Marketing Head</div>
+          </div>
+          <div class="member">
+            <img src="images/Council/Kalpesh.jpg" alt="Member 2" />
+            <div class="name">Kalpesh Gaiker</div>
+            <div class="post">Design/Branding Head</div>
+          </div>
+          <div class="member">
+            <img src="images/Council/Sakshi.png" alt="Member 2" />
+            <div class="name">Sakshi Jadhav</div>
+            <div class="post">Social Media Head</div>
+          </div>
+          <div class="member">
+            <img src="images/Council/Anisha.jpg" alt="Member 2" />
+            <div class="name">Anisha Koratala</div>
+            <div class="post">Public Relations Head</div>
+          </div>
+          <div class="member">
+            <img src="images/Council/Psalunke.jpg" alt="Member 2" />
+            <div class="name">Prasad Salunkhe</div>
+            <div class="post">Event Head</div>
+          </div>
+          <div class="member">
+            <img src="images/Council/Sarvesh.jpg" alt="Member 2" />
+            <div class="name">Sarvesh Borkar</div>
+            <div class="post">Media Head</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+      function scrollToCouncil() {
+        document.getElementById("council").style.display = "block";
+        const element = document.getElementById("council");
+        const duration = 750; // Adjust the duration here (in milliseconds)
+        const start = window.pageYOffset;
+        const end = element.offsetTop;
+        const startTime = performance.now();
+        function scroll(time) {
+          const elapsed = time - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          window.scrollTo(0, start + (end - start) * progress);
+          if (elapsed < duration) {
+            window.requestAnimationFrame(scroll);
+          }
+        }
+        window.requestAnimationFrame(scroll);
+      }
+    </script>
+  </body>
+</html>
