@@ -190,7 +190,7 @@ body {
 .eve-logo {
   margin-top: 30px;
 }
-@media (max-width: 1063px) {
+@media (max-width: 800px) {
   .landing-page {
     max-width: fit-content;
 
