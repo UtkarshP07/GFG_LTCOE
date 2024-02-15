@@ -11,8 +11,8 @@ body {
   min-height: 100vh;
 }
 .landing-page {
-  padding: 0px 2.5%;
   height: 100vh;
+  margin-bottom: 20px;
   flex: 1;
 }
 .navbar {
@@ -20,13 +20,19 @@ body {
   grid-template-columns: auto 1fr;
   align-items: center;
   position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgb(199, 207, 199);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: fade-in-down 1s ease forwards;
 }
 
 .logo {
   height: 100px;
   width: auto;
-  justify-self: center; /* Center the logo initially */
-  transition: justify-self 0.3s ease; /* Add transition for smooth movement */
+  justify-self: center;
+  transition: justify-self 0.3s ease;
+  margin-left: 60%;
 }
 
 .navbar a {
@@ -42,8 +48,11 @@ body {
   justify-content: flex-end;
   gap: 40px;
   font-size: 18px;
+  z-index: 2;
 }
-
+.navbar-links:last-child {
+  margin-right: 4%;
+}
 .navbar a:hover {
   background-color: #2f8d46;
   color: white;
@@ -51,13 +60,16 @@ body {
 
 .menu-toggle {
   display: none;
-  margin-top: 10px; /* Add margin to the top of the menu toggle button */
+  margin-top: 10px;
+  z-index: 3;
 }
 
 .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 50%;
+
+  padding: 0px 2.5%;
 }
 .content-left {
   padding: 20px;
@@ -65,6 +77,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  animation: fade-in-up 1s ease 0.5s forwards;
 }
 .content-left h4 {
   margin-bottom: 5px;
@@ -110,13 +123,99 @@ body {
   width: auto;
 }
 .second-page {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 5%;
+}
+.mySlides {
+  display: none;
+}
+.mySlides img {
+  vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  margin: 10px;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Ensure slides don't overflow */
+}
+
+/* Caption text */
+.mySlides > .text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+  display: none;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.slide-active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Set height of images */
+.mySlides img {
+  max-width: 100%;
+  height: 400px;
+}
+
+/* Dot container style */
+.dot-container {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: -5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.third-page {
   padding: 0px 2.5%;
   flex: 1;
   text-align: center;
+  background-color: #2f8d46;
+  padding-bottom: 20px;
 }
-.second-page h2 {
+.third-page h2 {
   margin-top: 50px;
   font-weight: 500;
+  color: white;
 }
 .Council-members .faculty-members {
   display: flex;
@@ -144,8 +243,8 @@ body {
 }
 
 .f-member img {
-  width: 250px;
-  height: 250px;
+  width: 230px;
+  height: 230px;
   object-fit: cover;
   border-radius: 10px;
   background-color: black;
@@ -162,34 +261,86 @@ body {
   font-size: 14px;
   font-weight: 500;
 }
-.third-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* Stack the content vertically */
-  flex: 1;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  background-image: url("images/bg/Events-bg-done.png");
-  background-size: cover; /* Ensure the background image covers the entire container */ /* Center the background image */
-  height: 100vh;
+#video-container {
+  position: relative;
+  width: fit-content;
+  height: 100px;
+  margin-top: 50px;
+  margin-bottom: 30px; /* Adjust height as needed */
 }
-.events {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+
+#scroll-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .last-page {
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  align-items: center;
+  justify-content: center;
 }
-.in {
-  padding: 10px;
-  margin-bottom: 250px;
+.getin {
+  width: fit-content;
+  height: 100%;
 }
-.eve-logo {
-  margin-top: 30px;
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+  padding: 0;
+  border: none;
+  transition: background-position 0.3s ease;
+  transition: background-color 0.3s ease;
 }
+
+.social-button svg {
+  margin-right: 5px;
+}
+
+.social-button:hover {
+  color: #342f8d;
+  transition: 1s smooth;
+}
+.social-button:hover {
+  background-position: 0 100%;
+  color: #342f8d;
+
+  transition: 2s smooth;
+}
+.icons-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+/* @keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    color: rgb(199, 207, 199);
+  }
+} */
+/* @keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */
 @media (max-width: 1063px) {
   .landing-page {
     max-width: fit-content;
@@ -200,6 +351,8 @@ body {
     display: block;
     margin: 0px 10px 0 0;
     position: static;
+    box-shadow: none;
+    background-color: white;
   }
   .navbar-links {
     display: none;
@@ -227,8 +380,8 @@ body {
     position: fixed;
     left: 5%;
     top: 0%;
-    margin-top: 40px; /* Add margin to the top of the menu toggle button */
-    margin-bottom: 20px; /* Add margin to the bottom of the menu toggle button */
+    margin-top: 40px;
+    margin-bottom: 20px;
   }
 
   .menu-toggle span {
@@ -250,8 +403,7 @@ body {
     width: 60%;
     padding: 2%;
     position: fixed;
-    /* Adjust top and left based on the current scroll position */
-    top: calc(50% + 10px);
+    top: calc(50% + 15px);
 
     transform: translate(-50%, -50%);
   }
@@ -287,7 +439,7 @@ body {
   }
 
   .content-right {
-    order: -1; /* Move the image section above the text section */
+    order: -1;
     max-width: 50%;
     height: auto;
   }
@@ -298,15 +450,15 @@ body {
     width: 200px;
     height: 200px;
   }
-  .in {
-    margin-left: 8%;
+  .getin {
+    width: 100%;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 550px) {
   .navbar img {
     margin-left: 26%;
   }
-.f-member img {
+  .f-member img {
     width: 150px;
     height: 150px;
   }
