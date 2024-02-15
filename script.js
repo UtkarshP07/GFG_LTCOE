@@ -36,6 +36,29 @@ function showSlides() {
   dots[slideIndex - 1].className += " slide-active";
   setTimeout(showSlides, 2000); // Change slide every 3 seconds
 }
+document.addEventListener("DOMContentLoaded", function () {
+  var video = document.getElementById("scroll-video");
+  var videoContainer = document.getElementById("video-container");
+  var fraction = 0.8;
+  var played = false;
+
+  window.addEventListener("scroll", function () {
+    var bounding = videoContainer.getBoundingClientRect();
+    if (
+      bounding.top >= 0 &&
+      bounding.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      !played
+    ) {
+      video.play();
+      played = true;
+      setTimeout(function () {
+        video.removeAttribute("loop");
+      }, 30000); // 30 seconds in milliseconds
+      window.removeEventListener("scroll", this);
+    }
+  });
+});
 
 function currentSlide(n) {
   showSlides((slideIndex = n));
