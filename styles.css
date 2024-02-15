@@ -294,9 +294,17 @@ body {
   .content-left h4 {
     margin-bottom: 20px;
   }
+  .f-member img {
+    width: 200px;
+    height: 200px;
+  }
 }
 @media (max-width: 500px) {
   .navbar img {
     margin-left: 26%;
+  }
+.f-member img {
+    width: 150px;
+    height: 150px;
   }
 }
