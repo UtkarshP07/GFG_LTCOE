@@ -251,7 +251,7 @@ body {
     padding: 2%;
     position: fixed;
     /* Adjust top and left based on the current scroll position */
-    top: calc(50% + 20px);
+    top: calc(50% + 10px);
 
     transform: translate(-50%, -50%);
   }
