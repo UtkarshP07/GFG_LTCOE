@@ -185,12 +185,12 @@ body {
 }
 .in {
   padding: 10px;
-  margin-bottom: 210px;
+  margin-bottom: 250px;
 }
 .eve-logo {
   margin-top: 30px;
 }
-@media (max-width: 800px) {
+@media (max-width: 1063px) {
   .landing-page {
     max-width: fit-content;
 
@@ -249,6 +249,11 @@ body {
     align-items: center;
     width: 60%;
     padding: 2%;
+    position: fixed;
+    /* Adjust top and left based on the current scroll position */
+    top: calc(50% + 20px);
+
+    transform: translate(-50%, -50%);
   }
   .content {
     display: flex;
