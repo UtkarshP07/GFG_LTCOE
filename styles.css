@@ -298,6 +298,9 @@ body {
     width: 200px;
     height: 200px;
   }
+  .in {
+    margin-left: 8%;
+  }
 }
 @media (max-width: 500px) {
   .navbar img {
