@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contest</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <img src="images/Logo.png" class="logo" />
+      <div class="menu-toggle" onclick="toggleMenu(this)">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="navbar-links">
+        <a href="index.html">Home</a>
+        <a href="#" onclick="scrollToSection('Links',event)">Links</a>
+        <a href="#" onclick="scrollToSection('last-one',event)"
+          ><b>Dashboard</b></a
+        >
+      </div>
+    </div>
+    <div id="Links">
+      <h3>
+        Click here for Contest Link
+        <a
+          style="text-decoration: none"
+          href="https://practice.geeksforgeeks.org/contest/code-arena-by-gfg-student-chapter-ltce"
+          >🟢</a
+        >
+      </h3>
+    </div>
+    <div id="Dashboard" style="text-align: center">
+      <h3>Dashboard will be updated once the contest is done.</h3>
+    </div>
+  </body>
+</html>
