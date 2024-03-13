@@ -463,3 +463,17 @@ body {
     height: 150px;
   }
 }
+.loaded .loader-wrapper {
+  display: none;
+}
+#Links {
+  margin: 2%;
+  text-align: center;
+}
+
+#Dashboard {
+  background-color: #96d5a6;
+  margin: 2%;
+  padding: 5%;
+  border-radius: 10px;
+}
