@@ -63,3 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function currentSlide(n) {
   showSlides((slideIndex = n));
 }
+window.onload = function () {
+  const loader = document.querySelector(".loader-wrapper");
+  loader.style.display = "none";
+};
